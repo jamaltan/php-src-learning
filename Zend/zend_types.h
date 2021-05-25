@@ -100,7 +100,7 @@ typedef struct _zend_ast        zend_ast;
 
 typedef int  (*compare_func_t)(const void *, const void *);
 typedef void (*swap_func_t)(void *, void *);
-typedef void (*sort_func_t)(void *, size_t, size_t, compare_func_t, swap_func_t);
+typedef void (*sort_func_t)(void *, size_t, size_t, compare_func_t, swap_func_t); //notes:编写一个通用的排序函数，参看qsort
 typedef void (*dtor_func_t)(zval *pDest);
 typedef void (*copy_ctor_func_t)(zval *pElement);
 
@@ -151,7 +151,7 @@ typedef struct {
 #define _ZEND_TYPE_MAY_BE_MASK ((1u << 20) - 1)
 /* Must have same value as MAY_BE_NULL */
 #define _ZEND_TYPE_NULLABLE_BIT 0x2u
-
+//notes:常用的功能型函数定义成macro
 #define ZEND_TYPE_IS_SET(t) \
 	(((t).type_mask & _ZEND_TYPE_MASK) != 0)
 
