@@ -2931,7 +2931,7 @@ static void php_array_data_shuffle(zval *array) /* {{{ */
 				j++;
 			}
 		}
-		while (--n_left) {
+		while (--n_left) { //shuffle算法
 			rnd_idx = php_mt_rand_range(0, n_left);
 			if (rnd_idx != n_left) {
 				temp = hash->arData[n_left];
